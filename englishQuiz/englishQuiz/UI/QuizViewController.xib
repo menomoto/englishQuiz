@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -48,7 +46,7 @@
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="vrZ-6Z-4jS" secondAttribute="bottom" id="FSh-r4-hHy"/>
+                        <constraint firstAttribute="bottom" secondItem="vrZ-6Z-4jS" secondAttribute="bottom" constant="64" id="FSh-r4-hHy"/>
                         <constraint firstAttribute="trailing" secondItem="vrZ-6Z-4jS" secondAttribute="trailing" id="cYl-wt-iKT"/>
                         <constraint firstItem="vrZ-6Z-4jS" firstAttribute="top" secondItem="Vkc-yZ-QUU" secondAttribute="top" id="hRj-Dz-J5J"/>
                         <constraint firstItem="vrZ-6Z-4jS" firstAttribute="leading" secondItem="Vkc-yZ-QUU" secondAttribute="leading" id="thZ-oQ-D3d"/>
@@ -82,7 +80,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <label hidden="YES" opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="○" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bin-qd-TeN" userLabel="result Label">
-                            <rect key="frame" x="108.5" y="266" width="197" height="286.5"/>
+                            <rect key="frame" x="95.5" y="266" width="223" height="286.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="240"/>
                             <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>

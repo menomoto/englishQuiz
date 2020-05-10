@@ -9,6 +9,7 @@ class ViewController: UIViewController {
         let vc = QuizViewController()
         vc.englishQuizzes = fetchQuizzes()
         let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true, completion: nil)
     }
     

@@ -1,7 +1,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -15,17 +14,25 @@ class ViewController: UIViewController {
     }
     
     private func fetchQuizzes() -> [Quiz] {
-        return [
-            QuizFixture.test(
-                question: "Which is red fruit?\n\n1) Banana\n2) Apple\n3) Lemon\n4) Kiwi",
-                answerCount: 4, answer: 2),
-            QuizFixture.test(
-                question: "Which animal is fast to run?\n\n1) Panda \n2) Elephant \n3) Giraffe \n4) Cheetah",
-                answerCount: 4, answer: 4),
-            QuizFixture.test(
-                question: "How many minutes a day?\n\n1) 1680 min\n2) 2880 min\n3) 1440 min",
-                answerCount: 3, answer: 3),
-        ]
+        let quizs: [Quiz] = load(csv: "quiz").map {
+            let quiz = $0.components(separatedBy: ",")
+            let choice = quiz.suffix(from: 2)
+                .enumerated().map { "\n\($0.offset) \($0.element)" }.joined(separator: "")
+            let question = "\(quiz[0])\n\n\(choice)"
+            return Quiz(question: question, answerCount: 4, answer: Int(quiz[1])!)
+        }
+        return quizs
+    }
+    
+    func load(csv fileName: String) -> [String] {
+        if let csvPath = Bundle.main.path(forResource: fileName, ofType: "csv") {
+            do {
+                let csvData = try String(contentsOfFile: csvPath, encoding: String.Encoding.utf8)
+                return csvData.components(separatedBy: "\n").filter { !$0.isEmpty }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
+        return []
     }
 }
-
